@@ -2,7 +2,7 @@
 
 Venta de Juegos.
 
-###Listado de juegos:
+### Listado de juegos:
 
 -StarCraft
 -Aladdin
@@ -11,7 +11,7 @@ Venta de Juegos.
 -Sonic
 -The Las of Us
 
-###Run:
+### Run:
 
 Cada Boton tiene su funcion.
 
