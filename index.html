@@ -4,47 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
-    <script src="assets/juego.js"></script>
-    <script src="assets/orden.js"></script>
-    <script src="assets/main.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="assets/styles/style.css">
     <title>Game Store</title>
 </head>
 <body>
     <header>
-        <section>
-            <div class="container">
-                <nav class="d-flex flex-row">
-                    <ul>
-                        <li>
-                            <strong>GAME STORE</strong>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <div class="col">
-                                <div class="d-flex flex-row">
-                                    <span>Búsqueda de producto</span>
-                                    <input type="search" name="q" placeholder="Buscar productos" aria-label="busqueda">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
+        <div class="container mt-3">
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="#">
+                        <img src="assets/images/game-store-logo.png" alt="logo">
+                    </a>
+                </div>
+                <div class="column">
+                    <div class="control">
+                        <input id="txtBusqueda" class="input" type="text" placeholder="Ingresa tu producto" aria-label="busqueda">
+                    </div>
+                </div>
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <div class="buttons">
+                            <a class="button is-light" onclick="buscarProducto()">
+                                Buscar Producto
+                            </a>
+                            <a class="button is-primary" onclick="verOrden()">
+                                <strong>Ver Carrito</strong>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section>
-            <div class="container">
 
+    <main>
+        <div class="container mt-6">
+            <div class="column is-full">
+                <div class="is-flex is-justify-content-center">
+                    <h1 class="title">Encuentra los mejores Juegos del mercado</h1>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container mt-5">
+                <div class="columns is-multiline is-vcentered">
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">StarCraft Remastered</p>
+                                    <p class="subtitle is-6 has-text-info">$60.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">PC</p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(0)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">Aladdin</p>
+                                    <p class="subtitle is-6 has-text-info">$25.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">SNES</p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(1)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">TWISTED METAL</p>
+                                    <p class="subtitle is-6 has-text-info">$35.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">PLAY STATION</p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(2)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">God of War</p>
+                                    <p class="subtitle is-6 has-text-info">$45.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">PLAY STATION</p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(3)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">Sonic</p>
+                                    <p class="subtitle is-6 has-text-info">$40.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">SEGA</p>
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(4)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+                    <div class="column is-one-third">
+                        <div class="card">
+                            <div class="card-image">
+                                <figure class="image is-4by3">
+                                    <img src="assets/images/starcraft.jpg" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="card-content">
+                                <div>
+                                    <p class="title is-4">The Last of Us</p>
+                                    <p class="subtitle is-6 has-text-info">$60.00</p>
+                                </div>
+                                <div class="content mt-3 mb-3">
+                                    StarCraft es un videojuego de estrategia en tiempo real de ciencia ficción militar desarrollado por Blizzard Entertainment
+                                </div>
+                                <p class="has-text-weight-semibold">PLAY STATION</p>
+
+                            </div>
+                            <footer class="card-footer">
+                                <a class="card-footer-item" onclick="comprarJuego(5)">Comprar Juego</a>
+                            </footer>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </section>
-    </main>
-<footer>
 
-</footer>
+    </main>
+
+    <script src="assets/juego.js"></script>
+    <script src="assets/orden.js"></script>
+    <script src="assets/main.js"></script>
 </body>
 </html>
