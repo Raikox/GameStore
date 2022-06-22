@@ -13,6 +13,7 @@ Venta de Juegos.
 
 ### Run:
 
-Cada Boton tiene su funcion.
+- Comprar juego: agrega juego al carrito.
+- Ver carrito: abre modal con el carrito actualizado.
 
 
