@@ -29,9 +29,4 @@ function buscarProducto() {
 
 function comprarJuego(indice) {
     orden.agregarJuego(juegos[indice]);
-    alert("Se agrego el juego: "+ juegos[indice].nombre);
-}
-
-function verOrden() {
-    orden.mostrarOrden();
 }
