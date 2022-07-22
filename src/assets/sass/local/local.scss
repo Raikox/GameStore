@@ -1,0 +1,16 @@
+@import "spaces";
+
+.input {
+  background-color: #1a1f21;
+  border-color: #1a1f21;
+  border-radius: 30px;
+  &:hover {
+    border-color: $main;
+  }
+  &::placeholder {
+    text-align: center;
+  }
+}
+.search-container {
+  min-width: 320px;
+}
