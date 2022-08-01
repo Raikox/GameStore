@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="src/assets/megamenu/syahrizaldev-mm.css"> <!--megamenu-->
     <script defer src="src/assets/megamenu/syahrizaldev-mm.js"></script> <!--megamenu-->
     <link rel="stylesheet" href="src/assets/styles/style.css"> <!-- bulma sass -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script> <!-- axios http request -->
 
+    <script src="src/app/entities/tienda.js"></script>
+    <script defer src="src/app/model/portada.js" type="module"></script>
+
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
     <title>Game Store</title>
 </head>
 <body>
@@ -20,7 +25,7 @@
                         <figure class="header-logo mr-2">
                             <img src="src/assets/images/logo/logo.png" alt="">
                         </figure>
-                        <a href="./index.html" class="brand">GAME STORE</a>
+                        <a href="./index.html" class="brand">BEST GAME</a>
                     </div>
                     <!-- Navbar Section -->
                     <div class="header-item-center">
@@ -32,62 +37,11 @@
                                 <button type="button" class="menu-mobile-close"><span class="iconify" data-icon="codicon:close" data-width="24" data-height="24"></span></button>
                             </div>
                             <ul class="menu-section">
-                                <li class="menu-item-has-children">
-                                    <a href="#">JUEGOS
-                                        <span class="iconify" data-icon="ant-design:down-outlined" data-width="16" data-height="16"></span>
-                                    </a>
-                                    <div class="menu-subs menu-mega menu-column-4">
-                                        <div class="list-item">
-                                            <h4 class="title">Men's Fashion</h4>
-                                            <ul>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                            </ul>
-                                            <h4 class="title">Kid's Fashion</h4>
-                                            <ul>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-item">
-                                            <h4 class="title">Women's Fashion</h4>
-                                            <ul>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                            </ul>
-                                            <h4 class="title">Health & Beauty</h4>
-                                            <ul>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-item">
-                                            <h4 class="title">Home & Lifestyle</h4>
-                                            <ul>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                                <li><a href="#">Product List</a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="list-item">
-                                            <!--<img src="./assets/product-05.jpg" loading="lazy" alt="Product Images">-->
-                                        </div>
-                                    </div>
+                                <li class="menu-item">
+                                    <a href="index.html">INICIO</a>
                                 </li>
                                 <li class="menu-item-has-children">
-                                    <a href="#">CATEGORIAS
+                                    <a href="#">TIENDAS
                                         <span class="iconify" data-icon="ant-design:down-outlined" data-width="16" data-height="16"></span>
                                     </a>
                                     <div class="menu-subs menu-mega menu-column-4">
@@ -210,15 +164,15 @@
                 <div class="column">
                     <div class="column fixed-npb mt-3">
                         <div class="is-flex is-justify-content-center mt-3 mb-3">
-                            <h1 class="title has-text-weight-normal ">ENCUENTRA LOS MEJORES
-                                <span class="has-text-primary">JUEGOS DEL MERCADO</span>
+                            <h1 class="title has-text-weight-normal">ENCUENTRA LAS MEJORES
+                                <span class="has-text-primary">OFERTAS DEL MERCADO</span>
                             </h1>
                         </div>
                     </div>
                     <div class="column">
                         <div class="is-flex is-justify-content-center">
                             <div class="control has-icons-left mt-3 mb-3 search-container">
-                                <input type="text" id="txtBusqueda" class="input" aria-label="busqueda" placeholder="Buscar en la tienda">
+                                <input type="text" id="txtBusqueda" class="input" aria-label="busqueda" placeholder="Busca tu oferta">
                                 <span class="icon is-small is-left">
                                     <span class="iconify" data-icon="ei:search" data-width="24"></span>
                                 </span>
@@ -228,13 +182,26 @@
                 </div>
             </div> <!-- busqueda -->
         </div>
-        <div class="container">
-            <div class="game-list">
 
+        <section class="fixed-mt-50">
+            <div class="container">
+                <div class="column">
+                    <div id="storesContainer" class="columns is-multiline is-vcentered">
+                        <div class="column is-flex is-justify-content-center is-flex-direction-column">
+                            <h2 class="is-size-2">Contamos con todas tus</h2>
+                            <h2 class="is-size-2">Tiendas Favoritas</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            <div class="container mt-5">
+                <div class="column">
+                    <div class="is-flex is-justify-content-center">
+                        <button class="button is-primary">EXPLORA TODAS LAS TIENDAS</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 </body>
 </html>

@@ -1,0 +1,25 @@
+{
+  "type": "module",
+  "name": "gamestore",
+  "version": "1.0.0",
+  "description": "Encuentra el mejor precio en juegos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Raikox/GameStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Raikox/GameStore/issues"
+  },
+  "homepage": "https://github.com/Raikox/GameStore#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0",
+    "react-bootstrap": "^2.4.0"
+  }
+}

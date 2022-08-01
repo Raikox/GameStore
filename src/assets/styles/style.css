@@ -9579,7 +9579,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 }
 
 .fixed-mt-header {
-  margin-top: 79px;
+  margin-top: 90px;
 }
 
 .fixed-np {
@@ -9589,6 +9589,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 
 .fixed-npb {
   padding-bottom: 0;
+}
+
+.fixed-mt-50 {
+  margin-top: 50px;
 }
 
 .input {
@@ -9606,5 +9610,18 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
 .search-container {
   min-width: 320px;
 }
+
+.store-card-container {
+  min-width: 210px;
+}
+
+.store-card {
+  cursor: pointer;
+}
+
+/*
+.columns:last-child {
+  margin-bottom: 0;
+}*/
 
 /*# sourceMappingURL=style.css.map */
