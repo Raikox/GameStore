@@ -20,7 +20,20 @@
 .store-card{
   cursor: pointer;
 }
-
+.table-single{
+  background-color: transparent;
+}
+.brand {
+  &:hover {
+    color: $main;
+  }
+}
+.store-banner {
+  max-height: 50px;
+}
+s {
+  text-decoration: line-through;
+}
 //fix horizontal scrollbar on columns
 /*
 .columns:last-child {

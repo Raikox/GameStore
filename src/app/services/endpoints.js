@@ -22,7 +22,7 @@ export const obtenerTiendas = async () => {
 }
 
 //get deals by store
-const obtenerOfertasAPI = async (tiendaID) => {
+export const obtenerOfertasAPI = async (tiendaID) => {
     try {
         const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
             params: { storeID : tiendaID}
@@ -41,7 +41,7 @@ export const obtenerOfertas = async (tiendaID) => {
                 ofertas.push(new Oferta(
                         oferta.thumb,
                         oferta.title,
-                        "https://www.cheapshark.com/redirect?",
+                        "https://www.cheapshark.com/redirect?dealID=",
                         oferta.dealID,
                         oferta.savings,
                         oferta.normalPrice,

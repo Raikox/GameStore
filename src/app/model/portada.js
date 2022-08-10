@@ -1,8 +1,9 @@
-import {obtenerTiendas} from "../services/endpoints.js";
+import {obtenerOfertas, obtenerTiendas} from "../services/endpoints.js";
 import {obtenerEnlaceImagen} from "../util/images.js";
 import {eventHandler} from "../util/handler.js";
 
 const storesContainer = document.getElementById("storesContainer");
+const humbleContainer = document.getElementById("humbleContainer");
 
 //muestra las 3 primeras tiendas obtenidas del api
 const renderTiendas = async (storesContainer) => {
@@ -14,7 +15,7 @@ const renderTiendas = async (storesContainer) => {
         if (index < 3) {
             const {_storeID, _storeName, _images} = data;
 
-            let column = ` 
+            let html = ` 
                         <div class="column is-flex is-justify-content-center">                       
                             <div class="is-flex is-flex-direction-column store-card-container">                            
                                 <div class="is-flex is-justify-content-center">
@@ -29,7 +30,7 @@ const renderTiendas = async (storesContainer) => {
                        </div>
                         `;
 
-            storesContainer.innerHTML += column;
+            storesContainer.innerHTML += html;
         }
     }
 
@@ -49,4 +50,54 @@ const renderTiendas = async (storesContainer) => {
     });
 }
 
+//muestra ofertas de la humbleStore
+const renderHumbleHead = (humbleContainer, storeID, storeName) => {
+
+    humbleContainer.innerHTML = `<div class="is-flex is-justify-content-center is-flex-direction-column">
+                                    <div class="is-flex is-justify-content-center">
+                                        <div class="store-banner mb-4">
+                                            <figure class="image" data-id="${storeID}">
+                                                ${obtenerEnlaceImagen("/img/stores/banners/10.png", storeName)}
+                                            </figure>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <table class="table table-single">
+                                            <tbody id="humbleTable">
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                `;
+
+}
+
+const renderHumbleData = async (storeID) => {
+
+    const humbleTable = document.getElementById("humbleTable");
+    let ofertas = await obtenerOfertas(storeID);
+
+    for ( const [index, data] of ofertas.entries() ) {
+
+        if (index < 10) {
+
+            const {_dealID, _title, _normalPrice, _salePrice, externalURL} = data;
+
+            let html = `
+                        <tr>
+                            <td> <a href="${externalURL}">${_title}</a> </td>
+                            <td> <s class="is-size-7"> ${_normalPrice}</s> </td>
+                            <td> <span class="has-text-weight-medium">${_salePrice}</span> </td>
+                        </tr>  
+                        `;
+            humbleTable.innerHTML += html;
+        }
+
+    }
+
+}
+
 renderTiendas(storesContainer);
+renderHumbleHead(humbleContainer,11,"HumbleBundle");
+renderHumbleData(11);

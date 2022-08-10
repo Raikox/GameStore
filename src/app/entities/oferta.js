@@ -93,4 +93,8 @@ class Oferta {
     set steamRatingPercent(value) {
         this._steamRatingPercent = value;
     }
+
+    get externalURL() {
+        return this._baseURL + this._dealID;
+    }
 }

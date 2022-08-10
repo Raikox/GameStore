@@ -9619,6 +9619,22 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   cursor: pointer;
 }
 
+.table-single {
+  background-color: transparent;
+}
+
+.brand:hover {
+  color: #1F895B;
+}
+
+.store-banner {
+  max-height: 50px;
+}
+
+s {
+  text-decoration: line-through;
+}
+
 /*
 .columns:last-child {
   margin-bottom: 0;
