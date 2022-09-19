@@ -9595,6 +9595,12 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   margin-top: 50px;
 }
 
+@media (min-width: 1216px) {
+  .dealsEpicGames, .dealsBlizzardShop, .dealsUplay {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
 .input {
   background-color: #1a1f21;
   border-color: #1a1f21;
@@ -9631,6 +9637,10 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   max-height: 50px;
 }
 
+.store-table {
+  max-width: 400px;
+}
+
 s {
   text-decoration: line-through;
 }
@@ -9639,5 +9649,31 @@ s {
 .columns:last-child {
   margin-bottom: 0;
 }*/
+.footer {
+  background: #1a1f21;
+}
+
+.left-side {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.highlight-price {
+  color: #fff !important;
+  background: #1F895B;
+  padding: 3px;
+  border: 1px solid #1F895B;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px #151515;
+  display: inline-block;
+  min-width: 55px;
+  text-align: center;
+}
+
+td > a.has-text-white:hover {
+  color: #1F895B !important;
+}
 
 /*# sourceMappingURL=style.css.map */

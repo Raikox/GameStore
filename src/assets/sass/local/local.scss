@@ -31,6 +31,9 @@
 .store-banner {
   max-height: 50px;
 }
+.store-table {
+  max-width: 400px;
+}
 s {
   text-decoration: line-through;
 }
@@ -39,3 +42,30 @@ s {
 .columns:last-child {
   margin-bottom: 0;
 }*/
+
+.footer {
+  background: #1a1f21;
+}
+
+.left-side {
+  max-width: 250px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.highlight-price {
+  color: #fff !important;
+  background: $main;
+  padding: 3px;
+  border: 1px solid $main;
+  border-radius: 5px;
+  text-shadow: 1px 1px 3px #151515;
+  display: inline-block;
+  min-width: 55px;
+  text-align: center;
+}
+
+td > a.has-text-white:hover {
+  color: $main !important;
+}

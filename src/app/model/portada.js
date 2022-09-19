@@ -86,7 +86,7 @@ const renderHumbleData = async (storeID) => {
 
             let html = `
                         <tr>
-                            <td> <a href="${externalURL}">${_title}</a> </td>
+                            <td> <a href="${externalURL}" target="_blank">${_title}</a> </td>
                             <td> <s class="is-size-7"> ${_normalPrice}</s> </td>
                             <td> <span class="has-text-weight-medium">${_salePrice}</span> </td>
                         </tr>  

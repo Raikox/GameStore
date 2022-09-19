@@ -54,3 +54,37 @@ export const obtenerOfertas = async (tiendaID) => {
         });
     return ofertas;
 }
+
+//get deals by game name
+export const obtenerOfertasByTitleAPI = async (gameTitle) => {
+    try {
+        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
+            params: { title : gameTitle}
+        });
+        return response.data;
+
+    }catch (exception){
+        console.log(exception);
+    }
+}
+export const obtenerOfertasByTitle = async (gameTitle) => {
+    let ofertas = [];
+    await obtenerOfertasByTitleAPI(gameTitle)
+        .then((info) => {
+            info.forEach( oferta => {
+                ofertas.push(new Oferta(
+                    oferta.thumb,
+                    oferta.title,
+                    "https://www.cheapshark.com/redirect?dealID=",
+                    oferta.dealID,
+                    oferta.savings,
+                    oferta.normalPrice,
+                    oferta.salePrice,
+                    oferta.dealRating,
+                    oferta.steamRatingText,
+                    oferta.steamRatingPercent
+                ));
+            });
+        });
+    return ofertas;
+}

@@ -14,3 +14,31 @@
 .fixed-mt-50 {
   margin-top: 50px;
 }
+
+//BREAKPOINTS
+
+//mobile
+@media (max-width: 768px) {
+
+}
+//tablet
+@media (min-width: 769px) and (max-width: 1023px) {
+
+}
+//desktop
+@media (min-width: 1024px) and (max-width: 1215px) {
+
+}
+//widescreen
+@media (min-width: 1216px) {
+  .dealsEpicGames {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .dealsUplay {
+    @extend .dealsEpicGames;
+  }
+  .dealsBlizzardShop {
+    @extend .dealsEpicGames;
+  }
+}
