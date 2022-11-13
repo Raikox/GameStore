@@ -9676,4 +9676,17 @@ td > a.has-text-white:hover {
   color: #1F895B !important;
 }
 
+.browse-thumb {
+  height: 46px;
+  width: 116px;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: contain;
+  background-color: #13171e;
+  border: 1px solid #123;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 /*# sourceMappingURL=style.css.map */

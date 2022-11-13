@@ -1,6 +1,5 @@
 class Oferta {
-    constructor(thumb, title, baseURL, dealID, savings, normalPrice, salePrice, dealRating, steamRatingText, steamRatingPercent) {
-
+    constructor(thumb, title, baseURL, dealID, savings, normalPrice, salePrice, dealRating, steamRatingText, steamRatingPercent, releaseDate, storeID ) {
         this._thumb = thumb;
         this._title = title;
         this._baseURL = baseURL;
@@ -11,8 +10,9 @@ class Oferta {
         this._dealRating = dealRating;
         this._steamRatingText = steamRatingText;
         this._steamRatingPercent = steamRatingPercent;
+        this._releaseDate = releaseDate;
+        this._storeID = storeID;
     }
-
 
     get thumb() {
         return this._thumb;
@@ -47,7 +47,7 @@ class Oferta {
     }
 
     get savings() {
-        return this._savings;
+        return Math.round(this._savings);
     }
 
     set savings(value) {
@@ -96,5 +96,22 @@ class Oferta {
 
     get externalURL() {
         return this._baseURL + this._dealID;
+    }
+
+    get releaseDate() {
+        const date = new Date(this._releaseDate);
+        return date.toDateString();
+    }
+
+    set releaseDate(value) {
+        this._releaseDate = value;
+    }
+
+    get storeID() {
+        return this._storeID;
+    }
+
+    set storeID(value) {
+        this._storeID = value;
     }
 }

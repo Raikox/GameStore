@@ -8,6 +8,44 @@ const obtenerTiendasAPI = async () => {
         console.log(exception);
     }
 }
+
+//get deals
+const obtenerOfertasAPI = async () => {
+    try {
+        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals");
+        return response.data;
+
+    }catch (exception){
+        console.log(exception);
+    }
+}
+
+//get deals by storeID
+const obtenerOfertasByStoreAPI = async (tiendaID) => {
+    try {
+        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
+            params: { storeID : tiendaID}
+        });
+        return response.data;
+
+    }catch (exception){
+        console.log(exception);
+    }
+}
+
+//get deals by game title
+const obtenerOfertasByTitleAPI = async (gameTitle) => {
+    try {
+        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
+            params: { title : gameTitle}
+        });
+        return response.data;
+
+    }catch (exception){
+        console.log(exception);
+    }
+}
+
 export const obtenerTiendas = async () => {
     let tiendas = [];
     await obtenerTiendasAPI()
@@ -21,21 +59,9 @@ export const obtenerTiendas = async () => {
     return tiendas;
 }
 
-//get deals by store
-export const obtenerOfertasAPI = async (tiendaID) => {
-    try {
-        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
-            params: { storeID : tiendaID}
-        });
-        return response.data;
-
-    }catch (exception){
-        console.log(exception);
-    }
-}
-export const obtenerOfertas = async (tiendaID) => {
+export const obtenerOfertasByStore = async (tiendaID) => {
     let ofertas = [];
-    await obtenerOfertasAPI(tiendaID)
+    await obtenerOfertasByStoreAPI(tiendaID)
         .then((info) => {
             info.forEach( oferta => {
                 ofertas.push(new Oferta(
@@ -55,18 +81,6 @@ export const obtenerOfertas = async (tiendaID) => {
     return ofertas;
 }
 
-//get deals by game name
-export const obtenerOfertasByTitleAPI = async (gameTitle) => {
-    try {
-        const response = await axios.get("https://www.cheapshark.com/api/1.0/deals", {
-            params: { title : gameTitle}
-        });
-        return response.data;
-
-    }catch (exception){
-        console.log(exception);
-    }
-}
 export const obtenerOfertasByTitle = async (gameTitle) => {
     let ofertas = [];
     await obtenerOfertasByTitleAPI(gameTitle)
@@ -88,3 +102,28 @@ export const obtenerOfertasByTitle = async (gameTitle) => {
         });
     return ofertas;
 }
+
+export const obtenerOfertas = async () => {
+    let ofertas = [];
+    await obtenerOfertasAPI()
+        .then((info) => {
+            info.forEach( oferta => {
+                ofertas.push(new Oferta(
+                    oferta.thumb,
+                    oferta.title,
+                    "https://www.cheapshark.com/redirect?dealID=",
+                    oferta.dealID,
+                    oferta.savings,
+                    oferta.normalPrice,
+                    oferta.salePrice,
+                    oferta.dealRating,
+                    oferta.steamRatingText,
+                    oferta.steamRatingPercent,
+                    oferta.releaseDate,
+                    oferta.storeID
+                ));
+            });
+        });
+    return ofertas;
+}
+

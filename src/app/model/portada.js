@@ -1,4 +1,4 @@
-import {obtenerOfertas, obtenerTiendas} from "../services/endpoints.js";
+import {obtenerOfertasByStore, obtenerTiendas} from "../services/endpoints.js";
 import {obtenerEnlaceImagen} from "../util/images.js";
 import {eventHandler} from "../util/handler.js";
 
@@ -76,7 +76,7 @@ const renderHumbleHead = (humbleContainer, storeID, storeName) => {
 const renderHumbleData = async (storeID) => {
 
     const humbleTable = document.getElementById("humbleTable");
-    let ofertas = await obtenerOfertas(storeID);
+    let ofertas = await obtenerOfertasByStore(storeID);
 
     for ( const [index, data] of ofertas.entries() ) {
 

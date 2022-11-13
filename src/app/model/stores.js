@@ -12,7 +12,7 @@ const stores = [
     {"id" : 15, "name" : "Fanatical", "banner" : "/img/stores/banners/14.png"},
     {"id" : 7, "name" : "Gog", "banner" : "/img/stores/banners/6.png"},
     {"id" : 31, "name" : "BlizzardShop", "banner" : "/img/stores/banners/30.png"},
-    {"id" : 3, "name" : "GreeManGaming", "banner" : "/img/stores/banners/2.png"},
+    {"id" : 3, "name" : "GreeManGaming", "banner" : "/img/stores/banners/2.png"}
 ];
 
 const renderStoreHeader = (dealsContainer, storeID, storeName, storeBanner) => {
