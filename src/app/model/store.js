@@ -1,3 +1,6 @@
+//
+// File deprecated, store no longer exist.
+//
 import {obtenerOfertas} from "../services/endpoints.js";
 
 const storeImageContainer = document.getElementById("storeImage");

@@ -1,4 +1,4 @@
-import {obtenerOfertas} from "../services/endpoints.js";
+import {obtenerOfertasByStore} from "../services/endpoints.js";
 import {obtenerEnlaceImagen} from "../util/images.js";
 
 const dealsContainer = document.getElementById("dealsContainer");
@@ -41,7 +41,7 @@ const renderStoreHeader = (dealsContainer, storeID, storeName, storeBanner) => {
 const renderStoreData = async (storeID, storeTableName) => {
 
     const storeTable = document.getElementById(storeTableName);
-    let ofertas = await obtenerOfertas(storeID);
+    let ofertas = await obtenerOfertasByStore(storeID);
 
     for ( const [index, data] of ofertas.entries() ) {
 
@@ -65,7 +65,6 @@ const renderStoreData = async (storeID, storeTableName) => {
 
 //render headers
 for (let i=0 ; i < stores.length ; i++) {
-
     const {id, name, banner} = stores[i];
     renderStoreHeader(dealsContainer, id, name, banner);
 }

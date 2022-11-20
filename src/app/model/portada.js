@@ -19,7 +19,7 @@ const renderTiendas = async (storesContainer) => {
                         <div class="column is-flex is-justify-content-center">                       
                             <div class="is-flex is-flex-direction-column store-card-container">                            
                                 <div class="is-flex is-justify-content-center">
-                                    <figure class="store-card image is-128x128" data-id="${_storeID}">
+                                    <figure class="image is-128x128" data-id="${_storeID}">
                                         ${ obtenerEnlaceImagen(_images.logo,_storeName) }
                                     </figure> 
                                 </div>                           
@@ -34,7 +34,8 @@ const renderTiendas = async (storesContainer) => {
         }
     }
 
-    eventHandler(document,"click",".store-card", e => {
+    //generate clic event on images
+    /*eventHandler(document,"click",".store-card", e => {
 
         const imgElement = e.target;
         const figureElement = imgElement.parentNode;
@@ -47,7 +48,7 @@ const renderTiendas = async (storesContainer) => {
 
         window.open("./store.html","_self");
 
-    });
+    });*/
 }
 
 //muestra ofertas de la humbleStore

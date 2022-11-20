@@ -9621,10 +9621,6 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   min-width: 210px;
 }
 
-.store-card {
-  cursor: pointer;
-}
-
 .table-single {
   background-color: transparent;
 }

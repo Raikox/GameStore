@@ -72,3 +72,13 @@ const getStoreData = (storeID) => {
 
 //render default
 renderDealsDataAll("dealsTable");
+
+
+
+//Browse specific game
+const searchButton = document.getElementById("btnBusqueda");
+searchButton.addEventListener("click", searchGame);
+
+const searchGame = () => {
+    //implement
+}
